@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 export const StyledCategoryContainer = styled.div`
   display: flex;
   gap: 2%;
-  width: 80%;
+  width: 60rem;
   margin: auto;
   justify-content: center;
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
+    width: 20rem;
     flex-direction: column;
     gap: 7rem;
     align-items: center;
@@ -27,7 +28,7 @@ export const StyledCategoryBox = styled.div`
 
   border-radius: 14px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 600px) {
     height: 13rem;
     width: 100%;
     padding: 2rem 0;

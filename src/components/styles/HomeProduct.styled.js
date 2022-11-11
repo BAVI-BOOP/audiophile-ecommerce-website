@@ -1,16 +1,23 @@
 import styled from "styled-components";
 import ZX7 from "../../assets/home/desktop/image-speaker-zx7.jpg";
+import TabletZX7 from "../../assets/home/tablet/image-speaker-zx7.jpg";
 import MobileZX7 from "../../assets/home/mobile/image-speaker-zx7.jpg";
 import Pattern from "../../assets/home/desktop/pattern-circles.svg";
 
 export const StyledProductContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 60rem;
   margin: auto;
   margin-top: 7rem;
   gap: 3rem;
-  margin-bottom: 15rem;
+  margin-bottom: 10rem;
+  @media (max-width: 1000px) {
+    width: 30rem;
+  }
+  @media (max-width: 600px) {
+    width: 20rem;
+  }
 `;
 
 export const StyledZX9Container = styled.div`
@@ -18,33 +25,36 @@ export const StyledZX9Container = styled.div`
   justify-content: space-around;
   color: white;
   background-color: ${({ theme }) => theme.darkOrange};
-  height: 57vh;
+
   background-image: url(${Pattern});
   background-position: -10% 20%;
   background-repeat: no-repeat;
   overflow: hidden;
   border-radius: 10px;
   @media (max-width: 1000px) {
+    padding-bottom: 2rem;
     flex-direction: column;
     background-size: 70%;
     background-position: center;
   }
 `;
 export const StyledSpeakerImg = styled.img`
-  width: 20rem;
-  height: 24rem;
   align-self: flex-end;
-  margin-bottom: -0.8rem;
+  margin-bottom: -1rem;
+  padding-top: 4rem;
   @media (max-width: 1000px) {
-    width: 10rem;
-    height: 13rem;
-    margin: auto;
+    margin: 0;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 3rem;
   }
+  /* width: 20rem;
+  height: 24rem;
 
   @media (max-width: 700px) {
     width: 7rem;
     height: 10rem;
-  }
+  } */
 `;
 
 export const StyledButton = styled.button`
@@ -99,10 +109,14 @@ export const StyledZX7Container = styled.div`
   border-radius: 10px;
   align-items: center;
   background-image: url(${ZX7});
-  height: 35vh;
+  height: 25vh;
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  object-fit: cover;
   background-position: center;
+  @media (max-width: 1000px) {
+    background-image: url(${TabletZX7});
+  }
   @media (max-width: 700px) {
     background-image: url(${MobileZX7});
   }
@@ -128,11 +142,12 @@ export const StyledSecondSpeakerH3 = styled.h3`
 export const StyledYX1Container = styled.div`
   display: flex;
   justify-content: space-between;
-  height: 35vh;
-  @media (max-width: 700px) {
+  height: 33vh;
+  @media (max-width: 1000px) {
     flex-direction: column;
     height: 50vh;
-    gap: 1rem;
+    gap: 2rem;
+    justify-content: center;
   }
 `;
 
@@ -146,19 +161,23 @@ export const StyledYX1Text = styled.div`
   gap: 2rem;
   border-radius: 10px;
 
-  @media (max-width: 700px) {
+  @media (max-width: 1000px) {
     width: 100%;
-    height: 50%;
+    height: 40%;
   }
 `;
 
 export const StyledEarphoneImg = styled.img`
-  width: 49%;
-  border-radius: 10px;
-  @media (max-width: 700px) {
+  height: 100%;
+  width: 29rem;
+
+  @media (max-width: 1000px) {
     width: 100%;
-    height: 50%;
   }
+  /* width: 49%;
+  border-radius: 10px;
+
+  } */
 `;
 
 export const StyledEarphoneH3 = styled.h3`

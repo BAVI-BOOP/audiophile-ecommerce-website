@@ -129,7 +129,7 @@ export const StyledButton = styled.button`
   font-weight: 700;
   letter-spacing: 1px;
   background-color: ${({ theme }) => theme.darkOrange};
-  @media (max-width: 900px) {
+  @media (max-width: 1000px) {
     margin: auto;
   }
   @media (max-width: 470px) {

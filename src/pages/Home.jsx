@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import HomeCategory from "../components/HomeCategory";
 import HomeHeader from "../components/HomeHeader";
 import HomeInfo from "../components/HomeInfo";
@@ -10,6 +11,7 @@ const Home = () => {
       <HomeCategory />
       <HomeProduct />
       <HomeInfo />
+      <Footer />
     </>
   );
 };

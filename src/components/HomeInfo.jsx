@@ -18,14 +18,14 @@ const HomeInfo = () => {
         <source
           media="(max-width: 600px)"
           srcSet={`${MobileMan} 1280w`}
-          sizes="600px"
+          sizes="36rem"
         />
         <source
-          media="(max-width: 1200px)"
+          media="(max-width: 1000px)"
           srcSet={`${TabletMan} 1280w`}
-          sizes="75vw"
+          sizes="30rem"
         />
-        <source srcSet={`${Man} 1280w`} sizes="1580px" />
+        <source srcSet={`${Man} 1280w`} sizes="1080px" />
         <StyledInfoImage src={`${Man} 1280w`} alt="img" />
       </picture>
 
