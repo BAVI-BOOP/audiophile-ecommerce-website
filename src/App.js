@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import { GlobalStyles } from "./components/styles/Global.styled";
 import { StyledContainer } from "./components/styles/Container.styled";
+import Category from "./pages/Category";
 
 const style = {
   darkOrange: "#D87D4A",
@@ -23,6 +24,7 @@ function App() {
         <StyledContainer>
           <Routes>
             <Route index element={<Home />}></Route>
+            <Route path="category" element={<Category />}></Route>
           </Routes>
         </StyledContainer>
       </BrowserRouter>

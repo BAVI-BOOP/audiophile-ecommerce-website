@@ -7,9 +7,9 @@ import {
   StyledInfoText,
 } from "./styles/HomeInfo.styled";
 
-import MobileMan from "../assets/shared/mobile/image-best-gear.jpg";
-import TabletMan from "../assets/shared/tablet/image-best-gear.jpg";
-import Man from "../assets/shared/desktop/image-best-gear.jpg";
+import MobileMan from "./assets/shared/mobile/image-best-gear.jpg";
+import TabletMan from "./assets/shared/tablet/image-best-gear.jpg";
+import Man from "./assets/shared/desktop/image-best-gear.jpg";
 
 const HomeInfo = () => {
   return (

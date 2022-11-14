@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { StyledUl } from "./HomeHeader.styled";
 
 export const StyledFooter = styled.div`
   background-color: #101010;

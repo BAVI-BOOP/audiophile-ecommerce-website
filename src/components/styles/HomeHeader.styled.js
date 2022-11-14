@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { AiOutlineMenu } from "react-icons/ai";
-import HeroHeadphone from "../../assets/home/desktop/image-hero.jpg";
-import MobileHeroHeadphone from "../../assets/home/mobile/image-header.jpg";
+import HeroHeadphone from "./../assets/home/desktop/image-hero.jpg";
+import MobileHeroHeadphone from "./../assets/home/mobile/image-header.jpg";
 import { Link } from "react-router-dom";
 
 const StyledHeader = styled.header`
@@ -17,7 +17,6 @@ const StyledHeader = styled.header`
     background-position: center;
     background-size: 85%;
     background-repeat: no-repeat;
-    background-color: #1a1a1a;
   }
 `;
 

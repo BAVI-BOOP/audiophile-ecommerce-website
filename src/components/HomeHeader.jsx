@@ -12,7 +12,7 @@ import {
   StyledLink,
 } from "./styles/HomeHeader.styled";
 import StyledHeader from "./styles/HomeHeader.styled";
-import Logo from "../assets/shared/desktop/logo.svg";
+import Logo from "./assets/shared/desktop/logo.svg";
 
 import { HiOutlineShoppingCart } from "react-icons/hi";
 

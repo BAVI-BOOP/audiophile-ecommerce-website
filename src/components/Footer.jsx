@@ -10,10 +10,10 @@ import {
   FooterUl,
   StyledFooter,
 } from "./styles/Footer.styled";
-import Logo from "../assets/shared/desktop/logo.svg";
-import Facebook from "../assets/shared/desktop/icon-facebook.svg";
-import Twitter from "../assets/shared/desktop/icon-twitter.svg";
-import Instagram from "../assets/shared/desktop/icon-instagram.svg";
+import Logo from "./assets/shared/desktop/logo.svg";
+import Facebook from "./assets/shared/desktop/icon-facebook.svg";
+import Twitter from "./assets/shared/desktop/icon-twitter.svg";
+import Instagram from "./assets/shared/desktop/icon-instagram.svg";
 
 const Footer = () => {
   return (

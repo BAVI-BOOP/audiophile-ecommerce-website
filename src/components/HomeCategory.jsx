@@ -5,11 +5,11 @@ import {
   StyledP,
   StyledShop,
   StyledImg,
-} from "./styles/Category.styled";
-import Headphones from "../assets/shared/desktop/image-category-thumbnail-headphones.png";
-import Speakers from "../assets/shared/desktop/Speakers.png";
-import Earphones from "../assets/shared/desktop/image-category-thumbnail-earphones.png";
-import ArrowIcon from "../assets/shared/desktop/icon-arrow-right.svg";
+} from "./styles/HomeCategory.styled";
+import Headphones from "./assets/shared/desktop/image-category-thumbnail-headphones.png";
+import Speakers from "./assets/shared/desktop/Speakers.png";
+import Earphones from "./assets/shared/desktop/image-category-thumbnail-earphones.png";
+import ArrowIcon from "./assets/shared/desktop/icon-arrow-right.svg";
 
 const HomeCategory = () => {
   return (

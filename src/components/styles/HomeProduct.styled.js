@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import ZX7 from "../../assets/home/desktop/image-speaker-zx7.jpg";
-import TabletZX7 from "../../assets/home/tablet/image-speaker-zx7.jpg";
-import MobileZX7 from "../../assets/home/mobile/image-speaker-zx7.jpg";
-import Pattern from "../../assets/home/desktop/pattern-circles.svg";
+import ZX7 from "./../assets/home/desktop/image-speaker-zx7.jpg";
+import TabletZX7 from "./../assets/home/tablet/image-speaker-zx7.jpg";
+import MobileZX7 from "./../assets/home/mobile/image-speaker-zx7.jpg";
+import Pattern from "./../assets/home/desktop/pattern-circles.svg";
 
 export const StyledProductContainer = styled.div`
   display: flex;

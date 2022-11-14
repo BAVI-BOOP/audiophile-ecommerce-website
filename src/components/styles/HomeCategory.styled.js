@@ -7,6 +7,7 @@ export const StyledCategoryContainer = styled.div`
   width: 60rem;
   margin: auto;
   justify-content: center;
+  margin-bottom: 5rem;
   @media (max-width: 1000px) {
     width: 20rem;
     flex-direction: column;
