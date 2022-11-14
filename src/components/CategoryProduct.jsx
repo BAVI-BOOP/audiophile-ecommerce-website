@@ -12,6 +12,7 @@ import {
   StyledCategoryHeader,
   StyledCategoryHeaderTitle,
   StyledPage,
+  StyledPicture,
 } from "./styles/CategoryProduct.styled";
 import HomeCategory from "./HomeCategory";
 import HomeInfo from "./HomeInfo";
@@ -43,10 +44,21 @@ const CategoryProduct = () => {
         {categoryData.map((product) => {
           return (
             <StyledCategoryContainer key={product.id} flexId={product.id}>
-              <StyledCategoryImage
-                src={require(`${product.image.desktop}`)}
-                alt="img"
-              />
+              <StyledPicture>
+                <source
+                  media="(max-width: 600px)"
+                  srcSet={require(`${product.categoryImage.mobile}`)}
+                />
+                <source
+                  media="(max-width: 1000px)"
+                  srcSet={require(`${product.categoryImage.tablet}`)}
+                />
+                <source srcSet={require(`${product.categoryImage.desktop}`)} />
+                <StyledCategoryImage
+                  src={require(`${product.categoryImage.desktop}`)}
+                  alt="img"
+                />
+              </StyledPicture>
               <StyledCategoryText>
                 <StyledCategorySubTitle>NEW PRODUCT</StyledCategorySubTitle>
                 <StyledCategoryTitle>{product.name}</StyledCategoryTitle>

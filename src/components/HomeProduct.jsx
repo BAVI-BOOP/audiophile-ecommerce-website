@@ -19,7 +19,7 @@ import MobileSpeaker from "./assets/home/mobile/image-speaker-zx9.png";
 import TabletSpeaker from "./assets/home/tablet/image-speaker-zx9.png";
 import DesktopSpeaker from "./assets/home/desktop/image-speaker-zx9.png";
 import MobileEarphone from "./assets/home/mobile/image-earphones-yx1.jpg";
-import TabletEarphone from "./assets/home/tablet/image-earphones-yx1.jpg";
+// import TabletEarphone from "./assets/home/tablet/image-earphones-yx1.jpg";
 import DesktopEarphone from "./assets/home/desktop/image-earphones-yx1.jpg";
 
 const HomeProduct = () => {
