@@ -53,7 +53,7 @@ const CategoryProduct = () => {
                   media="(max-width: 1000px)"
                   srcSet={require(`${product.categoryImage.tablet}`)}
                 />
-                <source srcSet={require(`${product.categoryImage.desktop}`)} />
+                <source srcSet={require(`${product.image.desktop}`)} />
                 <StyledCategoryImage
                   src={require(`${product.categoryImage.desktop}`)}
                   alt="img"
