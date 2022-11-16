@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { StyledCategoryContainer } from "./HomeCategory.styled";
 
 export const StyledDetailContainer = styled.div`
   width: 60rem;

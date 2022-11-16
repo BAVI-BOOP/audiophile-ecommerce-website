@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import {
   SecondStyledButton,
   StyledButton,
@@ -23,6 +24,7 @@ import MobileEarphone from "./assets/home/mobile/image-earphones-yx1.jpg";
 import DesktopEarphone from "./assets/home/desktop/image-earphones-yx1.jpg";
 
 const HomeProduct = () => {
+  const navigate = useNavigate();
   return (
     <StyledProductContainer>
       <StyledZX9Container>
@@ -48,13 +50,17 @@ const HomeProduct = () => {
             Upgrade to premium speakers that are <br /> phenomenally built to
             deliver truly remarkable <br /> sound.
           </StyledSpeakerP>
-          <SecondStyledButton>SEE PRODUCT</SecondStyledButton>
+          <SecondStyledButton onClick={() => navigate("/detail/3")}>
+            SEE PRODUCT
+          </SecondStyledButton>
         </StyledTextContainer>
       </StyledZX9Container>
       <StyledZX7Container>
         <div>
           <StyledSecondSpeakerH3>ZX7 SPEAKER</StyledSecondSpeakerH3>
-          <StyledButton>SEE PRODUCT</StyledButton>
+          <StyledButton onClick={() => navigate("/detail/5")}>
+            SEE PRODUCT
+          </StyledButton>
         </div>
       </StyledZX7Container>
       <StyledYX1Container>
@@ -73,7 +79,9 @@ const HomeProduct = () => {
         </picture>
         <StyledYX1Text>
           <StyledEarphoneH3>YX1 EARPHONES</StyledEarphoneH3>
-          <StyledThirdButton>SEE PRODUCT</StyledThirdButton>
+          <StyledThirdButton onClick={() => navigate("/detail/1")}>
+            SEE PRODUCT
+          </StyledThirdButton>
         </StyledYX1Text>
       </StyledYX1Container>
     </StyledProductContainer>

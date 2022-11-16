@@ -13,10 +13,12 @@ import {
 } from "./styles/HomeHeader.styled";
 import StyledHeader from "./styles/HomeHeader.styled";
 import Logo from "./assets/shared/desktop/logo.svg";
-
+import { useNavigate } from "react-router-dom";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 
 const HomeHeader = () => {
+  const navigate = useNavigate();
+
   return (
     <StyledHeader>
       <StyledNav>
@@ -52,7 +54,9 @@ const HomeHeader = () => {
             Experience natural, lifelike audio and exceptional <br /> build
             quality made for the passionate music <br /> enthusiast.
           </StyledP>
-          <StyledButton>SEE PRODUCT</StyledButton>
+          <StyledButton onClick={() => navigate("/detail/4")}>
+            SEE PRODUCT
+          </StyledButton>
         </StyledHeroText>
       </StyledHero>
     </StyledHeader>

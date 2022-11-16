@@ -1,14 +1,11 @@
+/* eslint-disable */
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   StyledCategoryButton,
-  StyledCategoryImage,
-  StyledCategoryP,
   StyledCategorySubTitle,
-  StyledCategoryText,
   StyledCategoryTitle,
-  StyledCategoryContainer,
   StyledPage,
   StyledPicture,
 } from "./styles/CategoryProduct.styled";
@@ -18,7 +15,6 @@ import {
   StyledButtonContainer,
   StyledCounterButton,
   StyledCounterPlusMinus,
-  StyledProductContainer,
   StyledProductContainerLeft,
   StyledProductContainerRight,
   StyledProductContainerSpan,
@@ -27,7 +23,6 @@ import {
   StyledProductDetailP,
   StyledProductExtraContainer,
   StyledProductExtraH3,
-  StyledProductExtraImg,
   StyledProductGalleryContainer,
   StyledProductGalleryContainerLeft,
   StyledGoBack,
