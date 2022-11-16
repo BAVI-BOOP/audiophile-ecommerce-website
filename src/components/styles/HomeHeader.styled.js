@@ -13,7 +13,7 @@ const StyledHeader = styled.header`
   background-size: cover;
   background-position: 76% 70%;
   height: 100vh;
-  margin-bottom: 15rem;
+  margin-bottom: 14.9rem;
   @media (max-width: 1000px) {
     background: url(${TabletHeroHeadphone});
     background-color: #191919;
