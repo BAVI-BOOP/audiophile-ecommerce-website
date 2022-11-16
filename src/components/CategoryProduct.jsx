@@ -16,29 +16,43 @@ import {
 } from "./styles/CategoryProduct.styled";
 import HomeCategory from "./HomeCategory";
 import HomeInfo from "./HomeInfo";
+import { useParams, useNavigate } from "react-router-dom";
+
 // import { initialState, reducer } from "../reducer/reducer";
 
 const CategoryProduct = () => {
+  const navigate = useNavigate();
+
+  const [typeOfProduct, setTypeOfProduct] = useState("");
+  let { product } = useParams();
+  console.log(product);
+
   //! UseReducer()
   // const [state, dispatch] = useReducer(reducer, initialState);
 
   const [categoryData, setCategoryData] = useState([]);
+
+  useEffect(() => {
+    setTypeOfProduct(product);
+  }, [product]);
+
   useEffect(() => {
     axios
       .get("https://6370d5be0399d1995d84e8f9.mockapi.io/ecom/audiop")
       .then((response) => {
         let filteredData = response["data"].filter(
-          (item) => item.category === "headphones"
+          (item) => item.category === typeOfProduct
         );
         setCategoryData(filteredData);
-        console.log(categoryData);
       });
-  }, []);
+  }, [typeOfProduct]);
 
   return (
     <div>
       <StyledCategoryHeader>
-        <StyledCategoryHeaderTitle>HEADPHONES</StyledCategoryHeaderTitle>
+        <StyledCategoryHeaderTitle>
+          {`${typeOfProduct}`.toUpperCase()}
+        </StyledCategoryHeaderTitle>
       </StyledCategoryHeader>
       <StyledPage>
         {categoryData.map((product) => {
@@ -63,7 +77,11 @@ const CategoryProduct = () => {
                 <StyledCategorySubTitle>NEW PRODUCT</StyledCategorySubTitle>
                 <StyledCategoryTitle>{product.name}</StyledCategoryTitle>
                 <StyledCategoryP>{product.description}</StyledCategoryP>
-                <StyledCategoryButton>SEE PRODUCT</StyledCategoryButton>
+                <StyledCategoryButton
+                  onClick={() => navigate(`/detail/${product.id}`)}
+                >
+                  SEE PRODUCT
+                </StyledCategoryButton>
               </StyledCategoryText>
             </StyledCategoryContainer>
           );

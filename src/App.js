@@ -5,6 +5,7 @@ import { GlobalStyles } from "./components/styles/Global.styled";
 import { StyledContainer } from "./components/styles/Container.styled";
 import Category from "./pages/Category";
 import Detail from "./pages/Detail";
+import Checkout from "./pages/Checkout";
 
 const style = {
   darkOrange: "#D87D4A",
@@ -25,8 +26,9 @@ function App() {
         <StyledContainer>
           <Routes>
             <Route index element={<Home />}></Route>
-            <Route path="category" element={<Category />}></Route>
-            <Route path="detail" element={<Detail />}></Route>
+            <Route path="category/:product" element={<Category />}></Route>
+            <Route path="detail/:id" element={<Detail />}></Route>
+            <Route path="checkout" element={<Checkout />}></Route>
           </Routes>
         </StyledContainer>
       </BrowserRouter>

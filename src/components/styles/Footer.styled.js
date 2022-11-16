@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const StyledFooter = styled.div`
   background-color: #101010;
-  height: 45vh;
+  height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,6 +11,7 @@ export const StyledFooter = styled.div`
   position: relative;
   @media (max-width: 550px) {
     gap: 5rem;
+    height: 80vh;
   }
 `;
 //FOOTER TOP
@@ -72,9 +74,17 @@ export const FooterBottom = styled.div`
   @media (max-width: 450px) {
     width: 17em;
   }
+  @media (max-width: 350px) {
+    margin-left: 1rem;
+  }
 `;
-export const FooterLi = styled.li`
+export const FooterLink = styled(Link)`
   color: ${({ theme }) => theme.grey};
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    color: ${({ theme }) => theme.darkOrange};
+  }
 `;
 export const FooterUl = styled.ul`
   list-style: none;
@@ -92,6 +102,7 @@ export const FooterIcons = styled.div`
   bottom: 8rem;
   display: flex;
   gap: 1rem;
+
   @media (max-width: 1000px) {
     right: 1rem;
     bottom: 1rem;
@@ -100,4 +111,7 @@ export const FooterIcons = styled.div`
     left: 20%;
   }
 `;
-export const FooterIcon = styled.img``;
+export const FooterIcon = styled.img`
+  color: ${({ theme }) => theme.grey};
+  cursor: pointer;
+`;

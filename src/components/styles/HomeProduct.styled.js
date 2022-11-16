@@ -18,6 +18,9 @@ export const StyledProductContainer = styled.div`
   @media (max-width: 600px) {
     width: 20rem;
   }
+  @media (max-width: 350px) {
+    width: 15rem;
+  }
 `;
 
 export const StyledZX9Container = styled.div`

@@ -9,6 +9,7 @@ export const StyledInfoContainer = styled.div`
   flex-direction: row-reverse;
   margin: auto;
   gap: 1rem;
+  margin-bottom: 5rem;
 
   @media (max-width: 1000px) {
     flex-direction: column;
@@ -17,13 +18,16 @@ export const StyledInfoContainer = styled.div`
   }
   @media (max-width: 600px) {
     flex-direction: column;
-    width: 20rem;
+    width: 15rem;
     gap: 1rem;
   }
 `;
 
 export const StyledInfoImage = styled.img`
   border-radius: 10px;
+  @media (max-width: 350px) {
+    width: 15rem;
+  }
 `;
 
 export const StyledInfoText = styled.div`
@@ -36,6 +40,9 @@ export const StyledInfoText = styled.div`
   }
   @media (max-width: 600px) {
     width: 20rem;
+  }
+  @media (max-width: 350px) {
+    width: 14rem;
   }
 `;
 
@@ -71,10 +78,10 @@ export const StyledInfoP = styled.p`
     font-size: 15px;
     line-height: 2rem;
   }
-  @media (max-width: 300px) {
-    width: 20rem;
-    font-size: 14px;
-    line-height: 2rem;
+  @media (max-width: 350px) {
+    width: 15rem;
+    font-size: 12px;
+    text-align: center;
   }
 `;
 

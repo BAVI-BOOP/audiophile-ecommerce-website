@@ -2,20 +2,31 @@ import styled from "styled-components";
 import { AiOutlineMenu } from "react-icons/ai";
 import HeroHeadphone from "./../assets/home/desktop/image-hero.jpg";
 import MobileHeroHeadphone from "./../assets/home/mobile/image-header.jpg";
+import TabletHeroHeadphone from "./../assets/home/tablet/image-header.jpg";
 import { Link } from "react-router-dom";
 
 const StyledHeader = styled.header`
-  /* background-color: ${({ theme }) => theme.lightBlack}; */
+  background-color: ${({ theme }) => theme.lightBlack};
   background: url(${HeroHeadphone});
   background-repeat: no-repeat;
+  background-color: #191919;
   background-size: cover;
   background-position: 76% 70%;
   height: 100vh;
   margin-bottom: 15rem;
-  @media (max-width: 570px) {
-    background: url(${MobileHeroHeadphone});
+  @media (max-width: 1000px) {
+    background: url(${TabletHeroHeadphone});
+    background-color: #191919;
+    background-size: 100%;
     background-position: center;
-    background-size: 85%;
+    background-repeat: no-repeat;
+  }
+  @media (max-width: 600px) {
+    background: url(${MobileHeroHeadphone});
+    background-color: #191919;
+    background-size: 80%;
+    background-position: center;
+
     background-repeat: no-repeat;
   }
 `;

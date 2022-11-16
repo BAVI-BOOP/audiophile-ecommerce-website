@@ -14,6 +14,15 @@ export const StyledCategoryContainer = styled.div`
     gap: 7rem;
     align-items: center;
   }
+  @media (max-width: 500px) {
+    width: 20rem;
+    flex-direction: column;
+    gap: 7rem;
+    align-items: center;
+  }
+  @media (max-width: 350px) {
+    width: 15rem;
+  }
 `;
 
 export const StyledCategoryBox = styled.div`
@@ -31,7 +40,7 @@ export const StyledCategoryBox = styled.div`
 
   @media (max-width: 600px) {
     height: 13rem;
-    width: 100%;
+    width: 90%;
     padding: 2rem 0;
   }
 `;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledCategoryContainer = styled.div`
-  width: 60rem;
+  width: 65rem;
   display: flex;
   justify-content: space-around;
   margin: auto;
@@ -14,8 +14,8 @@ export const StyledCategoryContainer = styled.div`
   @media screen and (max-width: 600px) {
     width: 30rem;
   }
-  @media screen and (max-width: 500px) {
-    width: 20rem;
+  @media screen and (max-width: 550px) {
+    width: 100%;
   }
 `;
 
@@ -27,7 +27,6 @@ export const StyledPage = styled.div`
   padding: 6rem 0;
   gap: 8rem;
   margin-bottom: 10rem;
-  border: 5px solid orange;
 `;
 
 export const StyledCategoryHeader = styled.header`
@@ -53,15 +52,18 @@ export const StyledCategoryText = styled.div`
 `;
 
 export const StyledCategoryImage = styled.img`
-  width: 30rem;
+  width: 25rem;
   margin: auto;
   @media screen and (max-width: 1000px) {
     width: 100%;
+    width: 16rem;
   }
 `;
 
 export const StyledPicture = styled.picture`
   margin: auto;
+  display: flex;
+  justify-content: center;
 
   @media screen and (max-width: 1000px) {
     width: 90%;
@@ -91,17 +93,24 @@ export const StyledCategoryTitle = styled.h2`
   @media screen and (max-width: 500px) {
     font-size: 36px;
   }
+  @media screen and (max-width: 300px) {
+    font-size: 24px;
+  }
 `;
 
 export const StyledCategoryP = styled.p`
   margin-bottom: 2rem;
   color: ${({ theme }) => theme.lightBlack};
   opacity: 0.7;
+  @media screen and (max-width: 300px) {
+    font-size: 14px;
+  }
 `;
 
 export const StyledCategoryButton = styled.button`
   background-color: ${({ theme }) => theme.darkOrange};
   padding: 1rem;
+  width: 9rem;
 
   border: none;
   color: white;

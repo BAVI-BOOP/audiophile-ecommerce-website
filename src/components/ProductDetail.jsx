@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 import {
   StyledCategoryButton,
   StyledCategoryImage,
@@ -30,11 +30,25 @@ import {
   StyledProductExtraImg,
   StyledProductGalleryContainer,
   StyledProductGalleryContainerLeft,
+  StyledGoBack,
   StyledProductPrice,
+  StyledDetailContainer,
+  StyledDetailPicture,
+  StyledProductDetailImg,
+  StyledDetailText,
+  StyledProductContainerLeftInner,
+  DetailQuantity,
+  StyledDetailGalleryImageRight,
+  StyledDetailGalleryImageLeft,
+  StyledExtraImg,
 } from "./styles/ProductDetail.styled";
+import { useParams } from "react-router-dom";
 // import { initialState, reducer } from "../reducer/reducer";
 
 const ProductDetail = () => {
+  const navigate = useNavigate();
+  let { id } = useParams();
+  console.log(id);
   //! UseReducer()
   // const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -46,38 +60,43 @@ const ProductDetail = () => {
     axios
       .get("https://6370d5be0399d1995d84e8f9.mockapi.io/ecom/audiop")
       .then((response) => {
-        SetItem(response?.data[3]);
+        console.log(response?.data);
+        let filteredItem = response?.data.filter(
+          (element) => String(element?.id) === String(id)
+        );
+        console.log(filteredItem);
+        SetItem(...filteredItem);
+        console.log(item);
       })
       .finally(() => setIsLoaded(true));
-    console.log(item?.image?.desktop);
   }, []);
 
   return (
     <div>
       <StyledPage>
-        <StyledCategoryContainer key={item.id} flexId={item.id}>
+        <StyledDetailContainer key={item.id}>
+          <StyledGoBack onClick={() => navigate(-1)}>Go Back</StyledGoBack>
           {isLoaded && (
-            <StyledPicture>
+            <StyledDetailPicture>
               <source
-                media="(max-width: 600px)"
-                srcSet={require(`${item?.categoryImage?.mobile}`)}
+                media="(max-width: 650px)"
+                srcSet={require(`${item?.image?.mobile}`)}
               />
               <source
                 media="(max-width: 1000px)"
-                srcSet={require(`${item?.categoryImage?.tablet}`)}
+                srcSet={require(`${item?.image?.tablet}`)}
               />
               <source srcSet={require(`${item?.image?.desktop}`)} />
-              <StyledCategoryImage
-                src={require(`${item?.categoryImage?.desktop}`)}
+              <StyledProductDetailImg
+                src={require(`${item?.image?.desktop}`)}
                 alt="img"
               />
-            </StyledPicture>
+            </StyledDetailPicture>
           )}
-
-          <StyledCategoryText>
+          <StyledDetailText>
             <StyledCategorySubTitle>NEW PRODUCT</StyledCategorySubTitle>
             <StyledCategoryTitle>{item?.name}</StyledCategoryTitle>
-            <StyledCategoryP>{item?.description}</StyledCategoryP>
+            <StyledProductDetailP>{item?.description}</StyledProductDetailP>
             <StyledProductPrice>${item?.price}</StyledProductPrice>
             <StyledButtonContainer>
               <StyledCounterButton>
@@ -99,30 +118,34 @@ const ProductDetail = () => {
               </StyledCounterButton>
               <StyledCategoryButton>ADD TO CART</StyledCategoryButton>
             </StyledButtonContainer>
-          </StyledCategoryText>
-        </StyledCategoryContainer>
+          </StyledDetailText>
+        </StyledDetailContainer>
         <StyledProductDescriptionContainer>
           <StyledProductContainerRight>
             <StyledProductContainerTitle>FEATURES</StyledProductContainerTitle>
             <StyledProductDetailP>{item.features}</StyledProductDetailP>
           </StyledProductContainerRight>
           <StyledProductContainerLeft>
-            <StyledProductContainerTitle>
-              IN THE BOX
-            </StyledProductContainerTitle>
-            {item?.includes?.map((element) => {
-              return (
-                <>
-                  <StyledProductContainerSpan>
-                    {element?.quantity}
-                  </StyledProductContainerSpan>
-                  <StyledProductContainerSpan>
-                    {element?.item}
-                  </StyledProductContainerSpan>
-                  <br />
-                </>
-              );
-            })}
+            <StyledProductContainerLeftInner>
+              <StyledProductContainerTitle align={true}>
+                IN THE BOX
+              </StyledProductContainerTitle>
+              <div>
+                {item?.includes?.map((element) => {
+                  return (
+                    <DetailQuantity>
+                      <StyledProductContainerSpan color="darkOrange">
+                        {element?.quantity}x
+                      </StyledProductContainerSpan>
+                      <StyledProductContainerSpan>
+                        {element?.item}
+                      </StyledProductContainerSpan>
+                      <br />
+                    </DetailQuantity>
+                  );
+                })}
+              </div>
+            </StyledProductContainerLeftInner>
           </StyledProductContainerLeft>
         </StyledProductDescriptionContainer>
 
@@ -139,7 +162,7 @@ const ProductDetail = () => {
                   srcSet={require(`${item?.gallery?.first?.tablet}`)}
                 />
                 <source srcSet={require(`${item?.gallery?.first?.desktop}`)} />
-                <StyledCategoryImage
+                <StyledDetailGalleryImageLeft
                   src={require(`${item?.gallery?.first?.desktop}`)}
                   alt="img"
                 />
@@ -156,7 +179,7 @@ const ProductDetail = () => {
                   srcSet={require(`${item?.gallery?.second?.tablet}`)}
                 />
                 <source srcSet={require(`${item?.gallery?.second?.desktop}`)} />
-                <StyledCategoryImage
+                <StyledDetailGalleryImageLeft
                   src={require(`${item?.gallery?.second?.desktop}`)}
                   alt="img"
                 />
@@ -174,38 +197,38 @@ const ProductDetail = () => {
                 srcSet={require(`${item?.gallery?.third?.tablet}`)}
               />
               <source srcSet={require(`${item?.gallery?.third?.desktop}`)} />
-              <StyledCategoryImage
+              <StyledDetailGalleryImageRight
                 src={require(`${item?.gallery?.third?.desktop}`)}
                 alt="img"
               />
             </StyledPicture>
           )}
         </StyledProductGalleryContainer>
+
         <StyledProductExtraContainer>
           {item?.others?.map((extra) => {
             return (
-              <div key={extra.slug}>
+              <div key={extra.slug} style={{ marginBottom: "2.2rem" }}>
                 {isLoaded && (
                   <StyledPicture>
                     <source
-                      media="(max-width: 600px)"
+                      media="(max-width: 650px)"
                       srcSet={require(`${extra?.image?.mobile}`)}
                     />
                     <source
-                      media="(max-width: 600px)"
+                      media="(max-width: 1000px)"
                       srcSet={require(`${extra?.image?.tablet}`)}
                     />
-                    <source
-                      media="(max-width: 600px)"
-                      srcSet={require(`${extra?.image?.desktop}`)}
-                    />
-                    <StyledProductExtraImg
+
+                    <StyledExtraImg
                       src={require(`${extra?.image?.desktop}`)}
                       alt="img"
                     />
                   </StyledPicture>
                 )}
-                <StyledProductExtraH3>{extra.name}</StyledProductExtraH3>
+                <StyledProductExtraH3>
+                  {`${extra.name}`.toUpperCase()}
+                </StyledProductExtraH3>
                 <StyledCategoryButton>SEE PRODUCT</StyledCategoryButton>
               </div>
             );

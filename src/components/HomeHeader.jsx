@@ -28,11 +28,15 @@ const HomeHeader = () => {
         <StyledUl>
           <StyledLink to={"/"}>HOME</StyledLink>
 
-          <StyledLink>HEADPHONES</StyledLink>
+          <StyledLink to="./category/headphones">HEADPHONES</StyledLink>
 
-          <StyledLink>SPEAKERS</StyledLink>
+          <StyledLink to="./category/speakers" state={{ data: "speakers" }}>
+            SPEAKERS
+          </StyledLink>
 
-          <StyledLink>EARPHONES</StyledLink>
+          <StyledLink to="./category/earphones" state={{ data: "earphones" }}>
+            EARPHONES
+          </StyledLink>
         </StyledUl>
         <HiOutlineShoppingCart
           style={{ fontSize: "22px", cursor: "pointer" }}

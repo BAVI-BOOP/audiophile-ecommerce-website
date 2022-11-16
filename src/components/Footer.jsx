@@ -3,7 +3,7 @@ import {
   FooterIcon,
   FooterIcons,
   FooterTop,
-  FooterLi,
+  FooterLink,
   FooterLogo,
   FooterP,
   FooterCopy,
@@ -21,10 +21,16 @@ const Footer = () => {
       <FooterTop>
         <FooterLogo src={Logo} />
         <FooterUl>
-          <FooterLi>HOME</FooterLi>
-          <FooterLi>HEADPHONES</FooterLi>
-          <FooterLi>SPEAKERS</FooterLi>
-          <FooterLi>EARPHONES</FooterLi>
+          <FooterLink to="/">HOME</FooterLink>
+          <FooterLink to="/category/headphones" state={{ data: "headphones" }}>
+            HEADPHONES
+          </FooterLink>
+          <FooterLink to="/category/speakers" state={{ data: "speakers" }}>
+            SPEAKERS
+          </FooterLink>
+          <FooterLink to="/category/earphones" state={{ data: "earphones" }}>
+            EARPHONES
+          </FooterLink>
         </FooterUl>
       </FooterTop>
       <FooterBottom>

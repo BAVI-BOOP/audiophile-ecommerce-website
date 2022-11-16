@@ -18,7 +18,9 @@ const HomeCategory = () => {
         <StyledImg src={Headphones} alt="Headphones" />
         <StyledH3>HEADPHONES</StyledH3>
         <StyledShop>
-          <StyledP to="">SHOP</StyledP>
+          <StyledP to="/category/headphones" state={{ data: "headphones" }}>
+            SHOP
+          </StyledP>
           <img src={ArrowIcon} alt="ArrowIcon" />
         </StyledShop>
       </StyledCategoryBox>
@@ -26,7 +28,9 @@ const HomeCategory = () => {
         <StyledImg src={Speakers} alt="Speakers" />
         <StyledH3>SPEAKERS</StyledH3>
         <StyledShop>
-          <StyledP to="/">SHOP</StyledP>
+          <StyledP to="/category/speakers" state={{ data: "speakers" }}>
+            SHOP
+          </StyledP>
           <img src={ArrowIcon} alt="ArrowIcon" />
         </StyledShop>
       </StyledCategoryBox>
@@ -34,7 +38,9 @@ const HomeCategory = () => {
         <StyledImg src={Earphones} alt="Earphones" />
         <StyledH3>EARPHONES</StyledH3>
         <StyledShop>
-          <StyledP to="">SHOP</StyledP>
+          <StyledP to="/category/earphones" state={{ data: "earphones" }}>
+            SHOP
+          </StyledP>
           <img src={ArrowIcon} alt="ArrowIcon" />
         </StyledShop>
       </StyledCategoryBox>
