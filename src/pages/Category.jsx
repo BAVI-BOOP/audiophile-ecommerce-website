@@ -4,11 +4,11 @@ import Navbar from "../components/Navbar";
 
 const Category = () => {
   return (
-    <>
+    <div>
       <Navbar />
       <CategoryProduct />
       <Footer />
-    </>
+    </div>
   );
 };
 

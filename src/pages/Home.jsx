@@ -6,13 +6,13 @@ import HomeProduct from "../components/HomeProduct";
 
 const Home = () => {
   return (
-    <>
+    <div>
       <HomeHeader />
       <HomeCategory />
       <HomeProduct />
       <HomeInfo />
       <Footer />
-    </>
+    </div>
   );
 };
 export default Home;
